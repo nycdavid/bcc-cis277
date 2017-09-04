@@ -1,5 +1,6 @@
-#include "../../catch.hpp"
+#include "../../src/week1/vector.hpp"
 #define CATCH_CONFIG_MAIN
+#include "../../catch.hpp"
 
 TEST_CASE("Vector#calc_sum") {
   SECTION("it returns a vector") {
