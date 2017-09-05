@@ -47,7 +47,11 @@ End
 
 FUNCTION calc_vector_magnitude(parameters: vct1, magnitude)
 Start
-  
+  Initialize variable of type Double `x_squared`
+  Initialize variable of type Double `y_squared`
+  Set variable `x_squared` to `vct1.x ^ 2`
+  Set variable `y_squared` to `vct1.y ^ 2`
+  Set parameter `magnitude` to `(x_squared + y_squared) ^ 0.5`
 End
 
 FUNCTION print_vector(parameters: output_file, vct, line_prefix)
