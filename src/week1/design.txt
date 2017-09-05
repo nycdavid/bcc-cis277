@@ -1,0 +1,55 @@
+Vector <STRUCTURE>
+  x <DOUBLE>
+  y <DOUBLE>
+  name <STRING>
+END Vector
+
+FUNCTION get_vector(parameters: vct)
+Start
+  Initialize variable of type Double "x"
+  Initialize variable of type Double "y"
+  Initialize variable of type String "name"
+
+  Display Message: "Enter a vector name: "
+  Prompt user to enter a value for variable `name`
+
+  Display Message: "Enter an x value: "
+  Prompt user to enter a value for variable `x`
+
+  Display Message: "Enter a y value: "
+  Prompt user to enter a value for variable `y`
+
+  Set data members of parameter `vct` to x, y, name
+End
+
+FUNCTION calc_sum(parameters: vct1, vct2, sum_vct)
+Start
+  Set data member `x` of `sum_vct` to `vct1.x + vct2.x`
+  Set data member `y` of `sum_vct` to `vct1.y + vct2.y`
+End
+
+FUNCTION calc_difference(parameters: vct1, vct2, diff_vct)
+Start
+  Set data member `x` of `diff_vct` to `vct1.x - vct2.x`
+  Set data member `y` of `diff_vct` to `vct1.y - vct2.y`
+End
+
+FUNCTION calc_scalar_multiple(parameters: vct1, multiple, scalar_multiple)
+Start
+  Set data member `x` of `scalar_multiple` to `multiple * vct1.x`
+  Set data member `y` of `scalar_multiple` to `multiple * vct1.y`
+End
+
+FUNCTION calc_scalar_product(parameters: vct1, vct2, scalar_product)
+Start
+  Set variable `scalar_product` to `(vct1.x * vct2.x) + (vct1.y + vct2.y)`
+End
+
+FUNCTION calc_vector_magnitude(parameters: vct1, magnitude)
+Start
+  
+End
+
+FUNCTION print_vector(parameters: output_file, vct, line_prefix)
+Start
+End

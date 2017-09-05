@@ -43,9 +43,9 @@ void calc_difference(Vector v1, Vector v2, Vector& diff) {
   diff.y = v1.y - v2.y;
 }
 
-void calc_scalar_multiple(Vector v1, Vector& scalar_prod, double multiple) {
-  scalar_prod.x = multiple * v1.x;
-  scalar_prod.y = multiple * v1.y;
+void calc_scalar_multiple(Vector v1, Vector& scalar_multiple, double multiple) {
+  scalar_multiple.x = multiple * v1.x;
+  scalar_multiple.y = multiple * v1.y;
 }
 
 void calc_scalar_product(Vector v1, Vector v2, double& scalar_product) {
