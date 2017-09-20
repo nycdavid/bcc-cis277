@@ -6,6 +6,7 @@ struct Matrix {
 };
 
 void calc_sum();
+void calc_diff();
 void show_menu();
 void print_matrix(Matrix m);
 Matrix get_matrix();
@@ -26,7 +27,9 @@ int main() {
       calc_sum();
       break;
     case 2:
-      std::cout << "You chose: Matrix Subtraction." << std::endl;
+      std::cout << std::endl;
+      std::cout << "You chose:" << std::endl;
+      calc_diff();
       break;
     case 3:
       std::cout << "You chose: Matrix Multiplication." << std::endl;
@@ -66,6 +69,30 @@ void calc_sum() {
   result.values[1][1] = m1.values[1][1] + m2.values[1][1];
 
   std::cout << "Sum of the 2 matrices: " << std::endl;
+  print_matrix(result);
+}
+
+void calc_diff() {
+  std::cout << "  _____       _     _                  _   _             " << std::endl;
+  std::cout << " / ____|     | |   | |                | | (_) " << std::endl;
+  std::cout << "| (___  _   _| |__ | |_ _ __ __ _  ___| |_ _  ___  _ __ " << std::endl;
+  std::cout << " \\___ \\| | | | '_ \\| __| '__/ _` |/ __| __| |/ _ \\| '_ \\" << std::endl;
+  std::cout << " ____) | |_| | |_) | |_| | | (_| | (__| |_| | (_) | | | |" << std::endl;
+  std::cout << "|_____/ \\__,_|_.__/ \\__|_|  \\__,_|\\___|\\__|_|\\___/|_| |_|" << std::endl;
+  std::cout << "#########################################################" << std::endl;
+
+  Matrix m1 = get_matrix();
+  print_matrix(m1);
+  Matrix m2 = get_matrix();
+  print_matrix(m2);
+  Matrix result;
+
+  result.values[0][0] = m1.values[0][0] - m2.values[0][0];
+  result.values[0][1] = m1.values[0][1] - m2.values[0][1];
+  result.values[1][0] = m1.values[1][0] - m2.values[1][0];
+  result.values[1][1] = m1.values[1][1] - m2.values[1][1];
+
+  std::cout << "Difference of the 2 matrices: " << std::endl;
   print_matrix(result);
 }
 
