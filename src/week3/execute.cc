@@ -16,7 +16,10 @@ struct vector {
 vector a;
 
 /***************************************************
-// TODO
+  Function: print_vector prints a vector to stdout as well as writes output to text file
+  called by: calc_sum, calc_dif, calc_mult
+  Function Parameters: output_file stream, vector, optional line_prefix string
+  Function Return Type: void
 ***************************************************/
 void print_vector(std::ofstream& output_file, vector v, std::string line_prefix = "") {
   if (line_prefix == "") {
@@ -28,9 +31,15 @@ void print_vector(std::ofstream& output_file, vector v, std::string line_prefix 
   }
 }
 
-void print_vector(std::ofstream& output_file, double val, std::string line_prefix = "") {
+/***************************************************
+  Function: print_vector prints a double value to stdout as well as writes output to text file
+  called by: calc_prod, calc_mag
+  Function Parameters: output_file stream, double val, optional line_prefix string
+  Function Return Type: void
+***************************************************/
+void print_double(std::ofstream& output_file, double val, std::string line_prefix = "") {
   std::cout << "Writing line to file: " << std::endl << line_prefix << " " << val << std::endl << std::endl;
-  output_file << "Writing line to file: " << std::endl << line_prefix << " " << val << std::endl << std::endl;
+  output_file << std::endl << line_prefix << " " << val << std::endl << std::endl;
 }
 
 /***************************************************
@@ -151,7 +160,7 @@ double calc_prod(std::ofstream& output_file) {
   vector v1 = get_vector();
   vector v2 = get_vector();
 	double scalar_prod = ((v1.x * v2.x) + (v1.y * v2.y));
-  print_vector(output_file, scalar_prod, "Scalar product = ");
+  print_double(output_file, scalar_prod, "Scalar product = ");
   return scalar_prod;
 }
 
@@ -164,7 +173,7 @@ double calc_prod(std::ofstream& output_file) {
 ***************************************************/
 double calc_mag(vector vec1, std::ofstream& output_file) {
   double mag = pow(pow(vec1.x, 2.0) + pow(vec1.y, 2.0), 0.5);
-  print_vector(output_file, mag, "Magnitude of Vector = ");
+  print_double(output_file, mag, "Magnitude of Vector = ");
   return mag;
 }
 
