@@ -14,6 +14,12 @@ void show_menu();
 void print_matrix(Matrix m);
 Matrix get_matrix();
 
+/***************************************************
+  Function: main executes the menu and triggers the correct function according to the user's choice
+  called by: N/A
+  Function Parameters: N/A
+  Function Return Type: N/A
+***************************************************/
 int main() {
   std::string input;
   int menuChoice;
@@ -57,6 +63,12 @@ int main() {
   return 0;
 }
 
+/***************************************************
+  Function: calc_sum allows the user to enter 2 matrices, sums them together and displays the result
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void calc_sum() {
   std::cout << "             _     _ _ _   _             " << std::endl;
   std::cout << "    /\\      | |   | (_) | (_)            " << std::endl;
@@ -81,6 +93,12 @@ void calc_sum() {
   print_matrix(result);
 }
 
+/***************************************************
+  Function: calc_diff allows the user to enter 2 matrices, subtracts them and displays the result
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void calc_diff() {
   std::cout << "  _____       _     _                  _   _             " << std::endl;
   std::cout << " / ____|     | |   | |                | | (_) " << std::endl;
@@ -105,6 +123,13 @@ void calc_diff() {
   print_matrix(result);
 }
 
+/***************************************************
+  Function: calc_scalar_multiplication allows the user to enter 1 matrix, and a scalar multiple.
+  it then multiplies the scalar and the matrix and displays the result
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void calc_scalar_multiplication() {
   std::cout << "     _____           _                                         " << std::endl;
   std::cout << "    / ____|         | |" << std::endl;
@@ -136,6 +161,13 @@ void calc_scalar_multiplication() {
   print_matrix(result);
 }
 
+/***************************************************
+  Function: calc_matrix_multiplication allows the user to enter 2 matrices, and  multiplies them together.
+  it then displays the result
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void calc_matrix_multiplication() {
   std::cout << "     __  __       _        _                                    " << std::endl;
   std::cout << "    |  \\/  |     | |      (_)                                   " << std::endl;
@@ -165,6 +197,13 @@ void calc_matrix_multiplication() {
   print_matrix(result);
 }
 
+/***************************************************
+  Function: calc_matrix_inversion allows the user to enter 1 matrix, and calculates the determinant.
+  it then inverts the matrix using the determinant and displays the result
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void calc_matrix_inversion() {
   std::cout << "   __  __       _        _                     " << std::endl;
   std::cout << "  |  \\/  |     | |      (_)                    " << std::endl;
@@ -191,6 +230,12 @@ void calc_matrix_inversion() {
   print_matrix(result);
 }
 
+/***************************************************
+  Function: get_matrix allows the user to enter 1 matrix, it's name, and it's corresponding values in each cell
+  called by: calc_sum, calc_diff, calc_scalar_multiplication, calc_matrix_multiplication, calc_matrix_inversion
+  Function Parameters: none
+  Function Return Type: Matrix
+***************************************************/
 Matrix get_matrix() {
   Matrix new_m;
   std::string name;
@@ -214,6 +259,12 @@ Matrix get_matrix() {
   return new_m;
 }
 
+/***************************************************
+  Function: print_matrix displays the values of a matrix
+  called by: calc_sum, calc_diff, calc_scalar_multiplication, calc_matrix_multiplication, calc_matrix_inversion, get_matrix
+  Function Parameters: Matrix m
+  Function Return Type: void
+***************************************************/
 void print_matrix(Matrix m) {
   std::cout << "Matrix Values:" << std::endl;
   std::cout << "[  " << m.values[0][0] << "    " << m.values[0][1] << "  ]" << std::endl;
@@ -221,8 +272,12 @@ void print_matrix(Matrix m) {
   std::cout << std::endl;
 }
 
-/**
-**/
+/***************************************************
+  Function: show_menu displays the possible menu options
+  called by: main
+  Function Parameters: none
+  Function Return Type: void
+***************************************************/
 void show_menu() {
   std::cout << std::endl;
   std::cout << "Options:" << std::endl;
