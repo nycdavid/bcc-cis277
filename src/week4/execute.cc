@@ -7,6 +7,7 @@ struct Matrix {
 
 void calc_sum();
 void calc_diff();
+void calc_scalar_multiplication();
 void show_menu();
 void print_matrix(Matrix m);
 Matrix get_matrix();
@@ -32,13 +33,15 @@ int main() {
       calc_diff();
       break;
     case 3:
-      std::cout << "You chose: Matrix Multiplication." << std::endl;
+      std::cout << std::endl;
+      std::cout << "You chose:" << std::endl;
+      calc_scalar_multiplication();
       break;
     case 4:
-      std::cout << "You chose: Matrix Inversion." << std::endl;
+      std::cout << "You chose: Matrix Multiplication." << std::endl;
       break;
     case 5:
-      std::cout << "You chose: Scalar Matrix Multiplication." << std::endl;
+      std::cout << "You chose: Matrix Inversion." << std::endl;
       break;
     default:
       std::cout << "Invalid choice." << std::endl;
@@ -96,6 +99,37 @@ void calc_diff() {
   print_matrix(result);
 }
 
+void calc_scalar_multiplication() {
+  std::cout << "     _____           _                                         " << std::endl;
+  std::cout << "    / ____|         | |" << std::endl;
+  std::cout << "   | (___   ___ __ _| | __ _ _ __" << std::endl;
+  std::cout << "    \\___ \\ / __/ _` | |/ _` | '__|" << std::endl;
+  std::cout << "    ____) | (_| (_| | | (_| | |" << std::endl;
+  std::cout << "   |_____/ \\___\\__,_|_|\\__,_|_|_ _           _   _" << std::endl;
+  std::cout << "   |  \\/  |     | | | (_)     | (_)         | | (_)" << std::endl;
+  std::cout << "   | \\  / |_   _| | |_ _ _ __ | |_  ___ __ _| |_ _  ___  _ __" << std::endl;
+  std::cout << "   | |\\/| | | | | | __| | '_ \\| | |/ __/ _` | __| |/ _ \\| '_ \\" << std::endl;
+  std::cout << "   | |  | | |_| | | |_| | |_) | | | (_| (_| | |_| | (_) | | | |" << std::endl;
+  std::cout << "   |_|  |_|\\__,_|_|\\__|_| .__/|_|_|\\___\\__,_|\\__|_|\\___/|_| |_|" << std::endl;
+  std::cout << "                        | |" << std::endl;
+  std::cout << "                        |_|" << std::endl;
+
+  double k;
+  Matrix m1 = get_matrix();
+  print_matrix(m1);
+  Matrix result;
+  std::cout << "Enter scalar value: ";
+  std::cin >> k;
+  std::cout << std::endl;
+
+  result.values[0][0] = k * m1.values[0][0];
+  result.values[0][1] = k * m1.values[0][1];
+  result.values[1][0] = k * m1.values[1][0];
+  result.values[1][1] = k * m1.values[1][1];
+  std::cout << "Scalar multiplication of scalar k & matrix: " << std::endl;
+  print_matrix(result);
+}
+
 Matrix get_matrix() {
   Matrix new_m;
   std::string name;
@@ -133,9 +167,9 @@ void show_menu() {
   std::cout << "Options:" << std::endl;
   std::cout << "1) Matrix Addition" << std::endl;
   std::cout << "2) Matrix Subtraction" << std::endl;
-  std::cout << "3) Matrix Multiplication" << std::endl;
-  std::cout << "4) Matrix Inversion" << std::endl;
-  std::cout << "5) Matrix Scalar Matrix Multiplication" << std::endl;
+  std::cout << "3) Scalar Matrix Multiplication" << std::endl;
+  std::cout << "4) Matrix Multiplication" << std::endl;
+  std::cout << "5) Matrix Inversion" << std::endl;
   std::cout << "6) Exit" << std::endl;
   std::cout << std::endl;
   std::cout << "Please choose your Matrix operation: ";
