@@ -102,9 +102,12 @@ vector calc_sum(vector vec1, vector vec2, std::ofstream& output_file) {
 	Function Parameters: vector vec1, vector vec2, vector result
 	Function Return Type: vector
 ***************************************************/
-vector calc_dif(vector vec1, vector vec2, std::ofstream& output_file) {
-	result.x = vec1.x - vec2.x;
-	result.y = vec1.y - vec2.y;
+vector calc_dif(std::ofstream& output_file) {
+  vector v1 = get_vector();
+  vector v2 = get_vector();
+  vector result;
+	result.x = v1.x - v2.x;
+	result.y = v1.y - v2.y;
   result.name = "Difference";
   print_vector(output_file, result);
 	return result;
@@ -144,8 +147,10 @@ vector calc_mult(vector vec1, std::ofstream& output_file) {
 	Function Parameters: vector vec1, vector vec2
 	Function Return Type: double
 /***************************************************/
-double calc_prod(vector vec1, vector vec2, std::ofstream& output_file) {
-	double scalar_prod = ((vec1.x * vec2.x) + (vec1.y * vec2.y));
+double calc_prod(std::ofstream& output_file) {
+  vector v1 = get_vector();
+  vector v2 = get_vector();
+	double scalar_prod = ((v1.x * v2.x) + (v1.y * v2.y));
   print_vector(output_file, scalar_prod, "Scalar product = ");
   return scalar_prod;
 }
@@ -238,7 +243,7 @@ int main() {
     			break;
         case 2:
 			system("cls");
-			calc_dif(get_vector(), get_vector(), output_file);
+			calc_dif(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 3:
@@ -248,7 +253,7 @@ int main() {
             break;
         case 4:
 			system("cls");
-			calc_prod(get_vector(), get_vector(), output_file);
+			calc_prod(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 5:
@@ -258,7 +263,7 @@ int main() {
             break;
         case 9:
         	system("cls");
-        	cout << "Program shuting down..." << endl;
+        	cout << "Program shutting down..." << endl;
 			running = false;
       		break;
         default:
