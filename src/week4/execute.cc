@@ -9,6 +9,7 @@ void calc_sum();
 void calc_diff();
 void calc_scalar_multiplication();
 void calc_matrix_multiplication();
+void calc_matrix_inversion();
 void show_menu();
 void print_matrix(Matrix m);
 Matrix get_matrix();
@@ -44,7 +45,9 @@ int main() {
       calc_matrix_multiplication();
       break;
     case 5:
-      std::cout << "You chose: Matrix Inversion." << std::endl;
+      std::cout << std::endl;
+      std::cout << "You chose:" << std::endl;
+      calc_matrix_inversion();
       break;
     default:
       std::cout << "Invalid choice." << std::endl;
@@ -159,6 +162,32 @@ void calc_matrix_multiplication() {
   result.values[1][0] = (m1.values[1][0] * m2.values[0][0]) + (m1.values[1][1] * m2.values[1][0]);
   result.values[1][1] = (m1.values[1][0] * m2.values[0][1]) + (m1.values[1][1] * m2.values[1][1]);
   std::cout << "Multiplication of matrices:" << std::endl;
+  print_matrix(result);
+}
+
+void calc_matrix_inversion() {
+  std::cout << "   __  __       _        _                     " << std::endl;
+  std::cout << "  |  \\/  |     | |      (_)                    " << std::endl;
+  std::cout << "  | \\  / | __ _| |_ _ __ ___  __               " << std::endl;
+  std::cout << "  | |\\/| |/ _` | __| '__| \\ \\/ /               " << std::endl;
+  std::cout << "  | |  | | (_| | |_| |  | |>  <                " << std::endl;
+  std::cout << "  |_|__|_|\\__,_|\\__|_|  |_/_/\\_\\ _             " << std::endl;
+  std::cout << "  |_   _|                       (_)            " << std::endl;
+  std::cout << "    | |  _ ____   _____ _ __ ___ _  ___  _ __  " << std::endl;
+  std::cout << "    | | | '_ \\ \\ / / _ \\ '__/ __| |/ _ \\| '_ \\ " << std::endl;
+  std::cout << "   _| |_| | | \\ V /  __/ |  \\__ \\ | (_) | | | |" << std::endl;
+  std::cout << "  |_____|_| |_|\\_/ \\___|_|  |___/_|\\___/|_| |_|" << std::endl;
+
+  Matrix m1 = get_matrix();
+  print_matrix(m1);
+  Matrix result;
+  double determinant = (m1.values[0][0] * m1.values[1][1]) - (m1.values[1][0] * m1.values[0][1]);
+
+  result.values[0][0] = m1.values[1][1] / determinant;
+  result.values[0][1] = -(m1.values[0][1] / determinant);
+  result.values[1][0] = -(m1.values[1][0] / determinant);
+  result.values[1][1] = m1.values[0][0] /determinant;
+  std::cout << "Inversion of Matrix:" << std::endl;
   print_matrix(result);
 }
 
