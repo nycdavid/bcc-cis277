@@ -8,6 +8,7 @@ struct Matrix {
 void calc_sum();
 void calc_diff();
 void calc_scalar_multiplication();
+void calc_matrix_multiplication();
 void show_menu();
 void print_matrix(Matrix m);
 Matrix get_matrix();
@@ -38,7 +39,9 @@ int main() {
       calc_scalar_multiplication();
       break;
     case 4:
-      std::cout << "You chose: Matrix Multiplication." << std::endl;
+      std::cout << std::endl;
+      std::cout << "You chose:" << std::endl;
+      calc_matrix_multiplication();
       break;
     case 5:
       std::cout << "You chose: Matrix Inversion." << std::endl;
@@ -127,6 +130,35 @@ void calc_scalar_multiplication() {
   result.values[1][0] = k * m1.values[1][0];
   result.values[1][1] = k * m1.values[1][1];
   std::cout << "Scalar multiplication of scalar k & matrix: " << std::endl;
+  print_matrix(result);
+}
+
+void calc_matrix_multiplication() {
+  std::cout << "     __  __       _        _                                    " << std::endl;
+  std::cout << "    |  \\/  |     | |      (_)                                   " << std::endl;
+  std::cout << "    | \\  / | __ _| |_ _ __ ___  __                              " << std::endl;
+  std::cout << "    | |\\/| |/ _` | __| '__| \\ \\/ /                              " << std::endl;
+  std::cout << "    | |  | | (_| | |_| |  | |>  <                               " << std::endl;
+  std::cout << "    |_|  |_|\\__,_|\\__|_|_ |_/_/\\_\\_           _   _             " << std::endl;
+  std::cout << "    |  \\/  |     | | | (_)     | (_)         | | (_)            " << std::endl;
+  std::cout << "    | \\  / |_   _| | |_ _ _ __ | |_  ___ __ _| |_ _  ___  _ __  " << std::endl;
+  std::cout << "    | |\\/| | | | | | __| | '_ \\| | |/ __/ _` | __| |/ _ \\| '_ \\ " << std::endl;
+  std::cout << "    | |  | | |_| | | |_| | |_) | | | (_| (_| | |_| | (_) | | | |" << std::endl;
+  std::cout << "    |_|  |_|\\__,_|_|\\__|_| .__/|_|_|\\___\\__,_|\\__|_|\\___/|_| |_|" << std::endl;
+  std::cout << "                         | |                                    " << std::endl;
+  std::cout << "                         |_|                                      " << std::endl;
+
+  Matrix m1 = get_matrix();
+  print_matrix(m1);
+  Matrix m2 = get_matrix();
+  print_matrix(m2);
+  Matrix result;
+
+  result.values[0][0] = (m1.values[0][0] * m2.values[0][0]) + (m1.values[0][1] * m2.values[1][0]);
+  result.values[0][1] = (m1.values[0][0] * m2.values[0][1]) + (m1.values[0][1] * m2.values[1][1]);
+  result.values[1][0] = (m1.values[1][0] * m2.values[0][0]) + (m1.values[1][1] * m2.values[1][0]);
+  result.values[1][1] = (m1.values[1][0] * m2.values[0][1]) + (m1.values[1][1] * m2.values[1][1]);
+  std::cout << "Multiplication of matrices:" << std::endl;
   print_matrix(result);
 }
 
