@@ -20,7 +20,7 @@ vector a;
   Function Return Type: void
 ***************************************************/
 void print_vector(std::ofstream& output_file, vector v, std::string line_prefix = "") {
-  system("cls");
+  system("clear");
   if (line_prefix == "") {
     std::cout << "Writing line to file: " << std::endl << v.name << " = (" << v.x << ", " << v.y << ")" << std::endl;
     output_file << v.name << " = (" << v.x << ", " << v.y << ")" << std::endl;
@@ -56,7 +56,7 @@ vector get_vector() {
 	{
   		getchar();
   		cin.clear();
-  		system("cls");
+  		system("clear");
   		cout << "INVALID INPUT" << endl;
   		cout << "----------------------------------" << endl << endl;
 	}
@@ -66,7 +66,7 @@ vector get_vector() {
 	{
   		getchar();
   		cin.clear();
-  		system("cls");
+  		system("clear");
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
   		cout << "----------------------------------" << endl;
@@ -79,7 +79,7 @@ vector get_vector() {
 	{
   		getchar();
   		cin.clear();
-  		system("cls");
+  		system("clear");
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
   		cout << "----------------------------------" << endl << endl;
@@ -141,7 +141,7 @@ vector calc_mult(std::ofstream& output_file) {
 	{
   		getchar();
   		cin.clear();
-  		system("cls");
+  		system("clear");
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
   		cout << "----------------------------------" << endl;
@@ -166,7 +166,7 @@ double calc_prod(std::ofstream& output_file) {
   vector v1 = get_vector();
   vector v2 = get_vector();
 	double scalar_prod = ((v1.x * v2.x) + (v1.y * v2.y));
-  system("cls");
+  system("clear");
   print_double(output_file, scalar_prod, "Scalar product = ");
   return scalar_prod;
 }
@@ -181,7 +181,7 @@ double calc_prod(std::ofstream& output_file) {
 double calc_mag(std::ofstream& output_file) {
   vector v1 = get_vector();
   double mag = pow(pow(v1.x, 2.0) + pow(v1.y, 2.0), 0.5);
-  system("cls");
+  system("clear");
   print_double(output_file, mag, "Magnitude of Vector = ");
   return mag;
 }
@@ -214,7 +214,7 @@ int main() {
 		{
       		getchar();
       		cin.clear();
-      		system("cls");
+      		system("clear");
       		cout << "INVALID INPUT" << endl;
       		cout << "NOT A NUMBER" << endl;
       		cout << "----------------------------------" << endl << endl;
@@ -223,37 +223,37 @@ int main() {
 		switch(Menu_Select)
     	{
         case 1:
-    			system("cls");
+    			system("clear");
     			calc_sum(output_file);
           cout << "----------------------------------" << endl << endl;
     			break;
         case 2:
-			system("cls");
+			system("clear");
 			calc_dif(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 3:
-			system("cls");
+			system("clear");
 			calc_mult(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 4:
-			system("cls");
+			system("clear");
 			calc_prod(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 5:
-			system("cls");
+			system("clear");
 			calc_mag(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 9:
-        	system("cls");
+        	system("clear");
         	cout << "Program shutting down..." << endl;
 			running = false;
       		break;
         default:
-          	system("cls");
+          	system("clear");
 			cout << "Invalid Input" << endl;
           	cout << "----------------------------------" << endl << endl;
     	}
