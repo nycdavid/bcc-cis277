@@ -6,8 +6,6 @@
 
 using namespace std;
 
-bool menuFLAG;
-
 struct vector {
 	double x, y;
 	string name;
@@ -32,7 +30,7 @@ void print_vector(std::ofstream& output_file, vector v, std::string line_prefix 
 }
 
 /***************************************************
-  Function: print_vector prints a double value to stdout as well as writes output to text file
+  Function: print_double prints a double value to stdout as well as writes output to text file
   called by: calc_prod, calc_mag
   Function Parameters: output_file stream, double val, optional line_prefix string
   Function Return Type: void
@@ -51,15 +49,14 @@ void print_double(std::ofstream& output_file, double val, std::string line_prefi
 ***************************************************/
 vector get_vector() {
 	vector vec;
-	cout << "Enter a name for this vector" << endl;
-    cin >> vec.name;
+	cout << "Enter a name for new vector" << endl;
+  cin >> vec.name;
     while (cin.fail())
 	{
   		getchar();
   		cin.clear();
   		system("cls");
   		cout << "INVALID INPUT" << endl;
-  		cout << "NOT A NUMBER" << endl;
   		cout << "----------------------------------" << endl << endl;
 	}
 	cout << "Enter a x-value for vector " << vec.name << endl;
@@ -71,7 +68,9 @@ vector get_vector() {
   		system("cls");
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
-  		cout << "----------------------------------" << endl << endl;
+  		cout << "----------------------------------" << endl;
+      cout << "Please re-enter a x-value for vector " << vec.name << endl;
+    	cin >> vec.x;
 	}
 	cout << "Enter a y-value for vector " << vec.name << endl;
 	cin >> vec.y;
@@ -83,9 +82,9 @@ vector get_vector() {
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
   		cout << "----------------------------------" << endl << endl;
+      cout << "Please re-enter a y-value for vector " << vec.name << endl;
+    	cin >> vec.y;
 	}
-	if (vec.name.empty() == 1)
-		menuFLAG = 1;
 	return vec;
 }
 
