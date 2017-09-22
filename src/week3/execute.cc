@@ -20,6 +20,7 @@ vector a;
   Function Return Type: void
 ***************************************************/
 void print_vector(std::ofstream& output_file, vector v, std::string line_prefix = "") {
+  system("cls");
   if (line_prefix == "") {
     std::cout << "Writing line to file: " << std::endl << v.name << " = (" << v.x << ", " << v.y << ")" << std::endl;
     output_file << v.name << " = (" << v.x << ", " << v.y << ")" << std::endl;
@@ -159,6 +160,7 @@ double calc_prod(std::ofstream& output_file) {
   vector v1 = get_vector();
   vector v2 = get_vector();
 	double scalar_prod = ((v1.x * v2.x) + (v1.y * v2.y));
+  system("cls");
   print_double(output_file, scalar_prod, "Scalar product = ");
   return scalar_prod;
 }
@@ -172,6 +174,7 @@ double calc_prod(std::ofstream& output_file) {
 ***************************************************/
 double calc_mag(vector vec1, std::ofstream& output_file) {
   double mag = pow(pow(vec1.x, 2.0) + pow(vec1.y, 2.0), 0.5);
+  system("cls");
   print_double(output_file, mag, "Magnitude of Vector = ");
   return mag;
 }
