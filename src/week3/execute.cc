@@ -96,9 +96,12 @@ vector get_vector() {
 	Function Parameters: vector vec1, vector vec2, vector result
 	Function Return Type: vector
 /***************************************************/
-vector calc_sum(vector vec1, vector vec2, std::ofstream& output_file) {
-	result.x = vec1.x + vec2.x;
-	result.y = vec1.y + vec2.y;
+vector calc_sum(std::ofstream& output_file) {
+	vector v1 = get_vector();
+  vector v2 = get_vector();
+  vector result;
+	result.x = v1.x + v2.x;
+	result.y = v1.y + v2.y;
   result.name = "Sum";
   print_vector(output_file, result);
 	return result;
@@ -252,7 +255,7 @@ int main() {
     	{
         case 1:
     			system("cls");
-    			calc_sum(get_vector(), get_vector(), output_file);
+    			calc_sum(output_file);
           cout << "----------------------------------" << endl << endl;
     			break;
         case 2:
