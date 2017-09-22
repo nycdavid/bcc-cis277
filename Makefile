@@ -2,9 +2,10 @@ run:
 	docker run \
 	-it \
 	-v $(shell pwd)/src:/app/src \
+	-v $(shell pwd)/output:/test_bin \
 	--rm \
 	cpp-env:1.0.0 \
-	/bin/bash -c "touch output.txt && g++ -std=c++14 -o /test_bin/program /app/src/${WEEK}/execute.cc && /test_bin/program && cat output.txt"
+	/bin/bash -c "touch /test_bin/output.txt && g++ -std=c++14 -o /test_bin/program /app/src/${WEEK}/execute.cc && /test_bin/program && cat /test_bin/output.txt"
 
 test:
 	docker run \

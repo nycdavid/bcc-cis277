@@ -219,6 +219,7 @@ void output(double resultNONVECTOR, int Menu_Select) {
 int main() {
 	int Menu_Select;
   std::ofstream output_file;
+  output_file.open("/test_bin/output.txt");
 
 	bool running = true;
 	do{
