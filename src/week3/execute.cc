@@ -140,7 +140,9 @@ vector calc_mult(vector vec1, std::ofstream& output_file) {
   		system("cls");
   		cout << "INVALID INPUT" << endl;
   		cout << "NOT A NUMBER" << endl;
-  		cout << "----------------------------------" << endl << endl;
+  		cout << "----------------------------------" << endl;
+      cout << "Please re-enter a scalar value for k" << endl;
+    	cin >> k;
 	}
 	result.x = vec1.x * k;
 	result.y = vec1.y * k;

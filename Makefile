@@ -4,8 +4,8 @@ run:
 	-v $(shell pwd)/src:/app/src \
 	-v $(shell pwd)/output:/test_bin \
 	--rm \
-	cpp-env:1.0.0 \
-	/bin/bash -c "touch /test_bin/output.txt && g++ -std=c++14 -o /test_bin/program /app/src/${WEEK}/execute.cc && /test_bin/program && cat /test_bin/output.txt"
+	davidko/cpp-env:base \
+	/bin/ash -c "touch /test_bin/output.txt && g++ -std=c++14 -o /test_bin/program /app/src/${WEEK}/execute.cc && /test_bin/program"
 
 test:
 	docker run \
