@@ -16,7 +16,7 @@ vector a;
 /***************************************************
   Function: print_vector prints a vector to stdout as well as writes output to text file
   called by: calc_sum, calc_dif, calc_mult
-  Function Parameters: output_file stream, vector, optional line_prefix string
+  Function Parameters: output_file stream, vector, line_prefix string
   Function Return Type: void
 ***************************************************/
 void print_vector(std::ofstream& output_file, vector v, std::string line_prefix = "") {
@@ -33,7 +33,7 @@ void print_vector(std::ofstream& output_file, vector v, std::string line_prefix 
 /***************************************************
   Function: print_double prints a double value to stdout as well as writes output to text file
   called by: calc_prod, calc_mag
-  Function Parameters: output_file stream, double val, optional line_prefix string
+  Function Parameters: output_file stream, double val, line_prefix string
   Function Return Type: void
 ***************************************************/
 void print_double(std::ofstream& output_file, double val, std::string line_prefix = "") {
@@ -44,9 +44,9 @@ void print_double(std::ofstream& output_file, double val, std::string line_prefi
 /***************************************************
 	Function: get_vector defines a single vector variable(can be called multiple times), flags runtime error
 	calls: defines single vector variable
-	called by: N/A
+	called by: calc_sum, calc_dif, calc_prod, calc_mag, calc_mult
 	Function Parameters: N/A
-	Function Return Type: returns a vector definition
+	Function Return Type: vector
 ***************************************************/
 vector get_vector() {
 	vector vec;
@@ -92,8 +92,8 @@ vector get_vector() {
 /***************************************************
 	Function Name: calc_sum, adds two vectors and returns
 	Calls: Returns sum of two vectors added together
-	Called by: vector vec1, vector vec2, vector result.
-	Function Parameters: vector vec1, vector vec2, vector result
+	Called by: main
+	Function Parameters: std::ofstream output_file
 	Function Return Type: vector
 /***************************************************/
 vector calc_sum(std::ofstream& output_file) {
@@ -110,8 +110,8 @@ vector calc_sum(std::ofstream& output_file) {
 /***************************************************
 	Function Name: calc_dif, subtracts two vectors and returns the sum
 	Calls: Returns sum of two vectors subtracted from each other
-	Called by: vector vec1, vector vec2, vector result
-	Function Parameters: vector vec1, vector vec2, vector result
+	Called by: main
+	Function Parameters: std::ofstream output_file
 	Function Return Type: vector
 ***************************************************/
 vector calc_dif(std::ofstream& output_file) {
@@ -128,11 +128,12 @@ vector calc_dif(std::ofstream& output_file) {
 /***************************************************
 	Function Name: calc_mult, scalar multplies a vector and returns the result
 	calls: result is returned after multiplication of scalar and vector
-	called by: vector vec, vector result
-	Function Parameters: vector vec, vector result
+	called by: main
+	Function Parameters: std::ofstream output_file
 	Function Return Type: vector
 ***************************************************/
-vector calc_mult(vector vec1, std::ofstream& output_file) {
+vector calc_mult(std::ofstream& output_file) {
+  vector v1 = get_vector();
 	int k;
 	cout << "Input scalar value for k" << endl;
 	cin >> k;
@@ -147,8 +148,8 @@ vector calc_mult(vector vec1, std::ofstream& output_file) {
       cout << "Please re-enter a scalar value for k" << endl;
     	cin >> k;
 	}
-	result.x = vec1.x * k;
-	result.y = vec1.y * k;
+	result.x = v1.x * k;
+	result.y = v1.y * k;
   result.name = "Scalar multiple";
   print_vector(output_file, result);
 	return result;
@@ -157,8 +158,8 @@ vector calc_mult(vector vec1, std::ofstream& output_file) {
 /***************************************************
 	Function: calc_prod,calculates the product of two vectors and returns it
 	Calls: Product of two vectors is calculated then returned
-	Called by: vector vec1, vector vec2
-	Function Parameters: vector vec1, vector vec2
+	Called by: main
+	Function Parameters: std::ofstream output_file
 	Function Return Type: double
 /***************************************************/
 double calc_prod(std::ofstream& output_file) {
@@ -173,49 +174,17 @@ double calc_prod(std::ofstream& output_file) {
 /***************************************************
 	Function Name: calc_mag, calculates the magnitude of a vector and returns it
 	Calls: Magnitude of a vector is calculated and then returned
-	Called by: vector vec
-	Function Parameters: vector vec
+	Called by: main
+	Function Parameters: std::ofstream output_file
 	Function Return Type: double
 ***************************************************/
-double calc_mag(vector vec1, std::ofstream& output_file) {
-  double mag = pow(pow(vec1.x, 2.0) + pow(vec1.y, 2.0), 0.5);
+double calc_mag(std::ofstream& output_file) {
+  vector v1 = get_vector();
+  double mag = pow(pow(v1.x, 2.0) + pow(v1.y, 2.0), 0.5);
   system("cls");
   print_double(output_file, mag, "Magnitude of Vector = ");
   return mag;
 }
-
-/***************************************************
-	Function Name: callVECTOR, calls vectors that return a vector, provides runtime errors check
-	Calls: Vectors that return a vector are called
-	Called by: int choice
-	Function Parameters: int choice
-	Function Return Type: vector
-***************************************************/
-
-
-/***************************************************
-	Function: call NONVECTOR, calls functions that return double, provides check for runtime erros.
-	calls: functions that return double
-	called by: int choice
-	Function Parameters: int choice
-	Function Return Type: double
-***************************************************/
-
-
-/***************************************************
-	Function: outputs text indicating the result and outputs the result
-	Calls: Output text to indicate result and outputs result
-	Called by: vector result, double resultNONVECTOR, int choice
-	Function Parameters: vector result, double resultNONVECTOR, int choice
-	Function Return Type: void
-***************************************************/
-void output(double resultNONVECTOR, int Menu_Select) {
-	if (Menu_Select  >= 1 && Menu_Select <= 3)
-		cout << "The result of your chosen operation is: (" << result.x << ", " << result.y << ")" << endl << endl;
-	else if (Menu_Select  == 4 || Menu_Select == 5)
-		cout << "The result of your chosen operation is: " << resultNONVECTOR << endl << endl;
-}
-
 
 /***************************************************
 	Function: bool menu
@@ -265,7 +234,7 @@ int main() {
             break;
         case 3:
 			system("cls");
-			calc_mult(get_vector(), output_file);
+			calc_mult(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 4:
@@ -275,7 +244,7 @@ int main() {
             break;
         case 5:
 			system("cls");
-			calc_mag(get_vector(), output_file);
+			calc_mag(output_file);
 			cout << "----------------------------------" << endl << endl;
             break;
         case 9:
