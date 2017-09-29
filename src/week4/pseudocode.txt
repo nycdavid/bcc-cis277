@@ -1,0 +1,159 @@
+David Ko
+
+Define Matrix structure
+  2x2 array of Doubles
+
+Create function calc_sum
+Create function calc_diff
+Create function calc_scalar_multiplication
+Create function calc_matrix_multiplication
+Create function calc_matrix_inversion
+Create function show_menu
+Create function print_matrix
+Create function get_matrix
+
+Function main()
+  Initialize string variable `input`
+  Initialize int variable `menuChoice`
+  Print "Welcome to the Matrix Program!"
+  Call show_menu()
+  Fetch User input into `menuChoice`
+  Switch on `menuChoice`
+    When `menuChoice` is 1
+      Print "You chose:"
+      Call calc_sum()
+    When `menuChoice` is 2
+      Print "You chose:"
+      Call calc_diff()
+    When `menuChoice` is 3
+      Print "You chose:"
+      Call calc_scalar_multiplication()
+    When `menuChoice` is 4
+      Print "You chose:"
+      Call calc_matrix_multiplication()
+    When `menuChoice` is 5
+      Print "You chose:"
+      Call calc_matrix_inversion()
+    When `menuChoice` is none of the above
+      Print "Invalid Choice."
+  Print "Exiting program."
+End Function
+
+Function calc_sum()
+  Initialize Matrix variable `m1` = Call get_matrix()
+  Call print_matrix() With `m1`
+  Initialize Matrix variable `m2` = Call get_matrix()
+  Call print_matrix() With `m2`
+  Initialize Matrix variable `result`
+
+  Set result.values[0][0] = m1.values[0][0] + m2.values[0][0];
+  Set result.values[0][1] = m1.values[0][1] + m2.values[0][1];
+  Set result.values[1][0] = m1.values[1][0] + m2.values[1][0];
+  Set result.values[1][1] = m1.values[1][1] + m2.values[1][1];
+
+  Print "Sum of the 2 matrices: "
+  Call print_matrix() with `result`
+End Function
+
+Function calc_diff()
+  Initialize Matrix variable `m1` = Call get_matrix()
+  Call print_matrix() With `m1`
+  Initialize Matrix variable `m2` = Call get_matrix()
+  Call print_matrix() With `m2`
+  Initialize Matrix variable `result`
+
+  Set result.values[0][0] = m1.values[0][0] - m2.values[0][0];
+  Set result.values[0][1] = m1.values[0][1] - m2.values[0][1];
+  Set result.values[1][0] = m1.values[1][0] - m2.values[1][0];
+  Set result.values[1][1] = m1.values[1][1] - m2.values[1][1];
+
+  Print "Difference of the 2 matrices: "
+  Call print_matrix() with `result`
+End Function
+
+Function calc_scalar_multiplication
+  Initialize double variable `k`
+  Initialize Matrix variable `m1` = Call get_matrix()
+  Call print_matrix() With `m1`
+  Initialize Matrix variable `result`
+  Print "Enter scalar value: "
+  Store User Input into variable `k`
+
+  Set result.values[0][0] = k * m1.values[0][0];
+  Set result.values[0][1] = k * m1.values[0][1];
+  Set result.values[1][0] = k * m1.values[1][0];
+  Set result.values[1][1] = k * m1.values[1][1];
+
+  Print "Scalar multiplication of scalar k & matrix: "
+  Call print_matrix with `result`
+End Function
+
+Function calc_matrix_multiplication
+  Initialize Matrix variable `m1` = Call get_matrix()
+  Call print_matrix() With `m1`
+  Initialize Matrix variable `m2` = Call get_matrix()
+  Call print_matrix() With `m2`
+  Initialize Matrix variable `result`
+
+  Set result.values[0][0] = (m1.values[0][0] * m2.values[0][0]) + (m1.values[0][1] * m2.values[1][0]);
+  Set result.values[0][1] = (m1.values[0][0] * m2.values[0][1]) + (m1.values[0][1] * m2.values[1][1]);
+  Set result.values[1][0] = (m1.values[1][0] * m2.values[0][0]) + (m1.values[1][1] * m2.values[1][0]);
+  Set result.values[1][1] = (m1.values[1][0] * m2.values[0][1]) + (m1.values[1][1] * m2.values[1][1]);
+
+  Print "Multiplication of matrices:"
+  Call print_matrix with `result`
+End Function
+
+Function calc_matrix_inversion
+  Initialize Matrix variable `m1` = Call get_matrix()
+  Call print_matrix() With `m1`
+  Initialize Matrix variable `result`
+  Initialize double variable `determinant` And Set = (m1.values[0][0] * m1.values[1][1]) - (m1.values[1][0] * m1.values[0][1]);
+
+  Set result.values[0][0] = m1.values[1][1] / determinant;
+  Set result.values[0][1] = -(m1.values[0][1] / determinant);
+  Set result.values[1][0] = -(m1.values[1][0] / determinant);
+  Set result.values[1][1] = m1.values[0][0] /determinant;
+
+  Print "Inversion of Matrix:"
+  Call print_matrix with `result`
+End Function
+
+Function get_matrix
+  Initialize Matrix variable `new_m`
+  Initialize string variable `name`
+  Print "Enter a matrix name: "
+  Store User Input in `name`
+
+  Print "Please enter value for matrix " + name + " at (1, 1): "
+  Store User Input in `new_m`.values[0][0]
+
+  Print "Please enter value for matrix " + name + " at (1, 2): "
+  Store User Input in `new_m`.values[0][1]
+
+  Print "Please enter value for matrix " + name + " at (2, 1): "
+  Store User Input in `new_m`.values[1][0]
+
+  Print "Please enter value for matrix " + name + " at (2, 2): "
+  Store User Input in `new_m`.values[1][1]
+  std::cout << std::endl;
+
+  Return variable `new_m`
+End Function
+
+Function print_matrix()
+  Print "Matrix Values: "
+  Print "[" + m.values[0][0] + m.values[0][1] + "]"
+  Print "[" + m.values[1][0] + m.values[1][1] + "]"
+End Function
+
+Function show_menu()
+  Print "Options:"
+  Print "1) Matrix Addition"
+  Print "2) Matrix Subtraction"
+  Print "3) Scalar Matrix Multiplication"
+  Print "4) Matrix Multiplication"
+  Print "5) Matrix Inversion"
+  Print "6) Exit"
+  Print "Please choose your Matrix operation: "
+End Function
