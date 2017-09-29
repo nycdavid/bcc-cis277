@@ -1,0 +1,238 @@
+Welcome to the Matrix program!
+
+Options:
+1) Matrix Addition
+2) Matrix Subtraction
+3) Scalar Matrix Multiplication
+4) Matrix Multiplication
+5) Matrix Inversion
+6) Exit
+
+Please choose your Matrix operation: 1
+
+You chose:
+             _     _ _ _   _
+    /\      | |   | (_) | (_)
+   /  \   __| | __| |_| |_ _  ___  _ __
+  / /\ \ / _` |/ _` | | __| |/ _ \| '_ \
+ / ____ \ (_| | (_| | | |_| | (_) | | | |
+/_/    \_\__,_|\__,_|_|\__|_|\___/|_| |_|
+#########################################
+Enter a matrix name: m1
+
+Please enter value for matrix m1 at (1, 1): 7
+Please enter value for matrix m1 at (1, 2): 2.5
+Please enter value for matrix m1 at (2, 1): -3
+Please enter value for matrix m1 at (2, 2): 2
+
+Matrix Values:
+[  7    2.5  ]
+[  -3    2  ]
+
+Enter a matrix name: m2
+
+Please enter value for matrix m2 at (1, 1): 8
+Please enter value for matrix m2 at (1, 2): 6.5
+Please enter value for matrix m2 at (2, 1): 5
+Please enter value for matrix m2 at (2, 2): 1.3
+
+Matrix Values:
+[  8    6.5  ]
+[  5    1.3  ]
+
+Sum of the 2 matrices:
+Matrix Values:
+[  15    9  ]
+[  2    3.3  ]
+
+—
+
+Welcome to the Matrix program!
+
+Options:
+1) Matrix Addition
+2) Matrix Subtraction
+3) Scalar Matrix Multiplication
+4) Matrix Multiplication
+5) Matrix Inversion
+6) Exit
+
+Please choose your Matrix operation: 2
+
+You chose:
+  _____       _     _                  _   _
+ / ____|     | |   | |                | | (_)
+| (___  _   _| |__ | |_ _ __ __ _  ___| |_ _  ___  _ __
+ \___ \| | | | '_ \| __| '__/ _` |/ __| __| |/ _ \| '_ \
+ ____) | |_| | |_) | |_| | | (_| | (__| |_| | (_) | | | |
+|_____/ \__,_|_.__/ \__|_|  \__,_|\___|\__|_|\___/|_| |_|
+#########################################################
+Enter a matrix name: m1
+
+Please enter value for matrix m1 at (1, 1): 7
+Please enter value for matrix m1 at (1, 2): 2.5
+Please enter value for matrix m1 at (2, 1): -3
+Please enter value for matrix m1 at (2, 2): 2
+
+Matrix Values:
+[  7    2.5  ]
+[  -3    2  ]
+
+Enter a matrix name: m2
+
+Please enter value for matrix m2 at (1, 1): 8
+Please enter value for matrix m2 at (1, 2): 6.5
+Please enter value for matrix m2 at (2, 1): 5
+Please enter value for matrix m2 at (2, 2): 1.3
+
+Matrix Values:
+[  8    6.5  ]
+[  5    1.3  ]
+
+Difference of the 2 matrices:
+Matrix Values:
+[  -1    -4  ]
+[  -8    0.7  ]
+
+-
+
+Welcome to the Matrix program!
+
+Options:
+1) Matrix Addition
+2) Matrix Subtraction
+3) Scalar Matrix Multiplication
+4) Matrix Multiplication
+5) Matrix Inversion
+6) Exit
+
+Please choose your Matrix operation: 3
+
+You chose:
+     _____           _
+    / ____|         | |
+   | (___   ___ __ _| | __ _ _ __
+    \___ \ / __/ _` | |/ _` | '__|
+    ____) | (_| (_| | | (_| | |
+   |_____/ \___\__,_|_|\__,_|_|_ _           _   _
+   |  \/  |     | | | (_)     | (_)         | | (_)
+   | \  / |_   _| | |_ _ _ __ | |_  ___ __ _| |_ _  ___  _ __
+   | |\/| | | | | | __| | '_ \| | |/ __/ _` | __| |/ _ \| '_ \
+   | |  | | |_| | | |_| | |_) | | | (_| (_| | |_| | (_) | | | |
+   |_|  |_|\__,_|_|\__|_| .__/|_|_|\___\__,_|\__|_|\___/|_| |_|
+                        | |
+                        |_|
+Enter a matrix name: m1
+
+Please enter value for matrix m1 at (1, 1): 7
+Please enter value for matrix m1 at (1, 2): 2.5
+Please enter value for matrix m1 at (2, 1): -3
+Please enter value for matrix m1 at (2, 2): 2
+
+Matrix Values:
+[  7    2.5  ]
+[  -3    2  ]
+
+Enter scalar value: 4.5
+
+Scalar multiplication of scalar k & matrix:
+Matrix Values:
+[  31.5    11.25  ]
+[  -13.5    9  ]
+
+-
+
+Welcome to the Matrix program!
+
+Options:
+1) Matrix Addition
+2) Matrix Subtraction
+3) Scalar Matrix Multiplication
+4) Matrix Multiplication
+5) Matrix Inversion
+6) Exit
+
+Please choose your Matrix operation: 4
+
+You chose:
+     __  __       _        _
+    |  \/  |     | |      (_)
+    | \  / | __ _| |_ _ __ ___  __
+    | |\/| |/ _` | __| '__| \ \/ /
+    | |  | | (_| | |_| |  | |>  <
+    |_|  |_|\__,_|\__|_|_ |_/_/\_\_           _   _
+    |  \/  |     | | | (_)     | (_)         | | (_)
+    | \  / |_   _| | |_ _ _ __ | |_  ___ __ _| |_ _  ___  _ __
+    | |\/| | | | | | __| | '_ \| | |/ __/ _` | __| |/ _ \| '_ \
+    | |  | | |_| | | |_| | |_) | | | (_| (_| | |_| | (_) | | | |
+    |_|  |_|\__,_|_|\__|_| .__/|_|_|\___\__,_|\__|_|\___/|_| |_|
+                         | |
+                         |_|
+Enter a matrix name: m1
+
+Please enter value for matrix m1 at (1, 1): 7
+Please enter value for matrix m1 at (1, 2): 2.5
+Please enter value for matrix m1 at (2, 1): -3
+Please enter value for matrix m1 at (2, 2): 2
+
+Matrix Values:
+[  7    2.5  ]
+[  -3    2  ]
+
+Enter a matrix name: m2
+
+Please enter value for matrix m2 at (1, 1): 8
+Please enter value for matrix m2 at (1, 2): 6.5
+Please enter value for matrix m2 at (2, 1): 5
+Please enter value for matrix m2 at (2, 2): 1.3
+
+Matrix Values:
+[  8    6.5  ]
+[  5    1.3  ]
+
+Multiplication of matrices:
+Matrix Values:
+[  68.5    48.75  ]
+[  -14    -16.9  ]
+
+-
+
+Welcome to the Matrix program!
+
+Options:
+1) Matrix Addition
+2) Matrix Subtraction
+3) Scalar Matrix Multiplication
+4) Matrix Multiplication
+5) Matrix Inversion
+6) Exit
+
+Please choose your Matrix operation: 5
+
+You chose:
+   __  __       _        _
+  |  \/  |     | |      (_)
+  | \  / | __ _| |_ _ __ ___  __
+  | |\/| |/ _` | __| '__| \ \/ /
+  | |  | | (_| | |_| |  | |>  <
+  |_|__|_|\__,_|\__|_|  |_/_/\_\ _
+  |_   _|                       (_)
+    | |  _ ____   _____ _ __ ___ _  ___  _ __
+    | | | '_ \ \ / / _ \ '__/ __| |/ _ \| '_ \
+   _| |_| | | \ V /  __/ |  \__ \ | (_) | | | |
+  |_____|_| |_|\_/ \___|_|  |___/_|\___/|_| |_|
+Enter a matrix name: m1
+
+Please enter value for matrix m1 at (1, 1): 7
+Please enter value for matrix m1 at (1, 2): 2.5
+Please enter value for matrix m1 at (2, 1): -3
+Please enter value for matrix m1 at (2, 2): 2
+
+Matrix Values:
+[  7    2.5  ]
+[  -3    2  ]
+
+Inversion of Matrix:
+Matrix Values:
+[  0.0930233    -0.116279  ]
+[  0.139535    0.325581  ]
