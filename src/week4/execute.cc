@@ -55,6 +55,8 @@ int main() {
       std::cout << "You chose:" << std::endl;
       calc_matrix_inversion();
       break;
+    case 6:
+      break;
     default:
       std::cout << "Invalid choice." << std::endl;
       break;
