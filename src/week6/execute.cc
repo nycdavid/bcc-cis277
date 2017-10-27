@@ -51,8 +51,8 @@ int ChooseQueue(Queue allQs[]) {
 }
 
 int main() {
-  bool keepAlive = true;
   std::string input;
+  bool keepAlive = true;
   int menuChoice;
   std::cout << "Welcome to the Queue program!" << std::endl;
   Queue q1 = CreateQueue();
