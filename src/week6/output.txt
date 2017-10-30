@@ -1,0 +1,183 @@
+Welcome to the Queue program!
+Create Queue
+What's the name of the Queue? q1
+How many items in the Queue? 5
+Enter item: 3
+Enqueueing item...
+Enter item: 6
+Enqueueing item...
+Enter item: 9
+Enqueueing item...
+Enter item: 4
+Enqueueing item...
+Enter item: 5
+Enqueueing item...
+Create Queue
+What's the name of the Queue? q2
+How many items in the Queue? 3
+Enter item: 12
+Enqueueing item...
+Enter item: 10
+Enqueueing item...
+Enter item: 19
+Enqueueing item...
+Create Queue
+What's the name of the Queue? q3
+How many items in the Queue? 3
+Enter item: 22
+Enqueueing item...
+Enter item: 29
+Enqueueing item...
+Enter item: 20
+Enqueueing item...
+Create Queue
+What's the name of the Queue? q4
+How many items in the Queue? 7
+Enter item: 34
+Enqueueing item...
+Enter item: 65
+Enqueueing item...
+Enter item: 30
+Enqueueing item...
+Enter item: 81
+Enqueueing item...
+Enter item: 57
+Enqueueing item...
+Enter item: 44
+Enqueueing item...
+Enter item: 99
+Enqueueing item...
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+
+Please choose your Queue operation: 1
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Enqueueing
+=========================
+Enter item: 9000
+Enqueueing item...
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+Please choose your Queue operation: 3
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Print Queue
+=========================
+
+================
+
+The front element is: 3
+The back element is: 9000
+Contents of the queue:
+| 3 | 6 | 9 | 4 | 5 | 9000 |
+The queue is: NOT EMPTY
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+
+Please choose your Queue operation: 2
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Dequeueing
+=========================
+Dequeueing item...
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+Please choose your Queue operation: 3
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Print Queue
+=========================
+
+================
+
+The front element is: 6
+The back element is: 9000
+Contents of the queue:
+| 6 | 9 | 4 | 5 | 9000 |
+The queue is: NOT EMPTY
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+
+Please choose your Queue operation: 4
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Purge Queue
+=========================
+Purging the Queue...
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
+Please choose your Queue operation: 3
+1) q1
+2) q2
+3) q3
+4) q4
+Please choose a Queue: 1
+
+You chose: Print Queue
+=========================
+
+================
+
+The front element is: 0
+The back element is: 0
+Contents of the queue:
+|
+The queue is: EMPTY
+
+Options:
+1) Enqueue to a Queue
+2) Dequeue from a Queue
+3) Show Queue Status
+4) Purge Queue
+8) Exit
