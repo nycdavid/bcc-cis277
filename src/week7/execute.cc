@@ -12,37 +12,40 @@ struct List {
   Node* tail;
 };
 
-void PrintList(List* lst);
+void PrintList(List& lst);
 void AddToHead(Node*& head, int el);
 
 int main() {
   List lst;
-  Node tail = { 68, NULL };
-  Node body = { 500, &tail };
-  Node hd = { 818, &body };
-  lst.head = &hd;
-
+  Node* tail = new Node;
+  tail->data = 68;
+  tail->next = NULL;
+  lst.tail = tail;
+  lst.head = tail;
 
   // Add to head of list;
+  AddToHead(lst.head, 500); // | 4346 | 818 | 500 | 68 |
+  AddToHead(lst.head, 818); // | 4346 | 818 | 500 | 68 |
   AddToHead(lst.head, 4346); // | 4346 | 818 | 500 | 68 |
-  cout << "Returned from AddToHead " << lst.head->data << endl;
-  PrintList(&lst);
-  // PrintList(lst);
+  AddToHead(lst.head, 6400); // | 4346 | 818 | 500 | 68 |
+
+  PrintList(lst);
 }
 
 void AddToHead(Node*& head, int el) {
-  Node newNode = { el, head };
-  head = &newNode;
+  Node* newNode = new Node;
+  newNode->data = el;
+  newNode->next = head;
+  head = newNode;
 }
 
-void PrintList(List* lst) {
+void PrintList(List& lst) {
   Node* temp;
-  temp = lst->head;
-  cout << "Inside PrintList" << temp->data << endl;
-  cout << "|";
-  // do {
-    cout << " " << temp->data << " |";
+  int data;
+  do {
+    data = temp->data;
+    cout << " | "<< data;
     temp = temp->next;
-  // } while (temp != NULL);
-  cout << endl;
+  } while (temp != NULL);
+  cout << " |" << endl;
 }
