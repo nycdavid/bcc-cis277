@@ -14,6 +14,7 @@ struct List {
 
 void PrintList(List& lst);
 void AddToHead(Node*& head, int el);
+void AddToTail(Node*& head, int el);
 
 int main() {
   List lst;
@@ -24,11 +25,16 @@ int main() {
   lst.head = tail;
 
   // Add to head of list;
-  AddToHead(lst.head, 500); // | 4346 | 818 | 500 | 68 |
-  AddToHead(lst.head, 818); // | 4346 | 818 | 500 | 68 |
+  AddToHead(lst.head, 500); // | 500 | 68 |
+  PrintList(lst);
+  AddToHead(lst.head, 818); // | 818 | 500 | 68 |
+  PrintList(lst);
   AddToHead(lst.head, 4346); // | 4346 | 818 | 500 | 68 |
-  AddToHead(lst.head, 6400); // | 4346 | 818 | 500 | 68 |
+  PrintList(lst);
+  AddToHead(lst.head, 6400); // | 6400 | 4346 | 818 | 500 | 68 |
+  PrintList(lst);
 
+  AddToTail(lst.head, 9000); // | 6400 | 4346 | 818 | 500 | 68 | 9000 |
   PrintList(lst);
 }
 
@@ -39,8 +45,19 @@ void AddToHead(Node*& head, int el) {
   head = newNode;
 }
 
+void AddToTail(Node*& head, int el) {
+  Node* temp = head;
+  do {
+    temp = temp->next;
+  } while(temp->next != NULL);
+  Node* newNode = new Node;
+  newNode->data = el;
+  newNode->next = NULL;
+  temp->next = newNode;
+}
+
 void PrintList(List& lst) {
-  Node* temp;
+  Node* temp = lst.head;
   int data;
   do {
     data = temp->data;
