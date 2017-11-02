@@ -15,6 +15,7 @@ struct List {
 void PrintList(List& lst);
 void AddToHead(Node*& head, int el);
 void AddToTail(Node*& head, int el);
+void Insert(Node*& head, int el, int idx);
 
 int main() {
   List lst;
@@ -33,9 +34,24 @@ int main() {
   PrintList(lst);
   AddToHead(lst.head, 6400); // | 6400 | 4346 | 818 | 500 | 68 |
   PrintList(lst);
-
   AddToTail(lst.head, 9000); // | 6400 | 4346 | 818 | 500 | 68 | 9000 |
   PrintList(lst);
+
+  Insert(lst.head, 989, 2);
+  PrintList(lst); // | 6400 | 4346 | 989 | 818 | 500 | 68 | 9000 |
+}
+
+void Insert(Node*& head, int el, int idx) {
+  int counter = 0;
+  Node* newNode = new Node;
+  newNode->data = el;
+  Node* nextNode = head;
+  do {
+    nextNode = nextNode->next;
+    counter += 1;
+  } while ((counter + 1) != idx);
+  newNode->next = nextNode->next;
+  nextNode->next = newNode;
 }
 
 void AddToHead(Node*& head, int el) {
