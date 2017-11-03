@@ -16,6 +16,8 @@ void PrintList(List& lst);
 void AddToHead(Node*& head, int el);
 void AddToTail(Node*& head, int el);
 void Insert(Node*& head, int el, int idx);
+void RemoveFromHead(Node*& head);
+void RemoveFromTail(Node*& head);
 
 int main() {
   List lst;
@@ -36,9 +38,13 @@ int main() {
   PrintList(lst);
   AddToTail(lst.head, 9000); // | 6400 | 4346 | 818 | 500 | 68 | 9000 |
   PrintList(lst);
-
   Insert(lst.head, 989, 2);
   PrintList(lst); // | 6400 | 4346 | 989 | 818 | 500 | 68 | 9000 |
+  RemoveFromHead(lst.head); // | 4346 | 989 | 818 | 500 | 68 | 9000 |
+  PrintList(lst);
+
+  RemoveFromTail(lst.head); // | 4346 | 989 | 818 | 500 | 68 |
+  PrintList(lst);
 }
 
 void Insert(Node*& head, int el, int idx) {
@@ -70,6 +76,22 @@ void AddToTail(Node*& head, int el) {
   newNode->data = el;
   newNode->next = NULL;
   temp->next = newNode;
+}
+
+void RemoveFromHead(Node*& head) {
+  Node* n = head;
+  head = head->next;
+  delete n;
+}
+
+void RemoveFromTail(Node*& head) {
+  Node* temp = head;
+  do {
+    temp = temp->next;
+  } while (temp->next->next != NULL);
+  Node* toDel = temp->next;
+  temp->next = NULL;
+  delete toDel;
 }
 
 void PrintList(List& lst) {
